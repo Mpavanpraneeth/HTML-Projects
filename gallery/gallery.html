@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width ,initial-scale=1.0" />
+    <title>Gallery</title>
+    <style>
+      .parent {
+        width: 90%;
+        border: 1px solid black;
+
+        margin: 0px auto;
+        padding: 4px;
+        overflow: scroll;
+      }
+      .child {
+        height: 100px;
+        width: 200px;
+        display: inline-block;
+        background-color: gray;
+        margin: 2px;
+      }
+      .child img {
+        max-width: 100%;
+      }
+      .not-child {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        color: white;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      body {
+        background-color: burlywood;
+      }
+      #popImage {
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Gallery</h1>
+    <section class="parent">
+      <section class="not-child" id="overlay">
+        <section style="width: 60%">
+          <button onclick="hidePop()">X</button>
+        </section>
+        <img id="popImage" alt="" />
+      </section>
+      <section class="child">
+        <img onclick="showpop(this)" src="./boss-302.jpg" alt="" />
+      </section>
+      <section class="child">
+        <img onclick="showpop(this)" src="./ford-mustang-coupe.jpg" alt="" />
+      </section>
+      <section class="child">
+        <img onclick="showpop(this)" src="./15_ford mustang.jpg" alt="" />
+      </section>
+      <section class="child">
+        <img onclick="showpop(this)" src="./IMG-20220607-WA0005.jpg" alt="" />
+      </section>
+      <section class="child">
+        <img onclick="showpop(this)" src="./continental mk3.jpg" alt="" />
+      </section>
+      <section class="child">
+        <img onclick="showpop(this)" src="./rtr mustang.jpg" alt="" />
+      </section>
+      <section class="child">
+        <img onclick="showpop(this)" src="./muscle_cars_.jpg" alt="" />
+      </section>
+      <section class="child">
+        <img onclick="showpop(this)" src="./mustang 1.jpg" alt="" />
+      </section>
+      <section class="child">
+        <img onclick="showpop(this)" src="./mustang 2.jpg" alt="" />
+      </section>
+      <section class="child">
+        <img onclick="showpop(this)" src="./chevrolet-copo-camaro.jpg" alt="" />
+      </section>
+      <section class="child">
+        <img
+          onclick="showpop(this)"
+          src="./chevrolet-camaro-synthwave-4k-71.jpg"
+          alt=""
+        />
+      </section>
+      <section class="child">
+        <img onclick="showpop(this)" src="./mercedes-benz-g-class.jpg" alt="" />
+      </section>
+    </section>
+    <script>
+      var popup = document.getElementById("overlay");
+      function showpop(elem) {
+        document.getElementById("popImage").src = elem.src;
+        popup.style.display = "flex";
+      }
+      function hidePop() {
+        popup.style.display = "none";
+      }
+    </script>
+  </body>
+</html>
